@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customizable Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>WELCOME</h1>
+      <h2>DODI SUPRIADI</h2>
+    </div>
+
+    <div class="menu-icons">
+      <img src="img/bell.png" alt="Notifications" />
+      <img src="img/home.png" alt="Home" />
+      <img src="img/user.png" alt="Profile" />
+    </div>
+
+    <div id="clock">00:00:00</div>
+
+    <div id="container">
+      <div>
+        <h1>GenoveClock</h1>
+      </div>
+    
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      function updateText() {
+        const textInput = document.getElementById("textInput").value;
+        document.getElementById("customText").textContent = textInput;
+      }
+
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>
